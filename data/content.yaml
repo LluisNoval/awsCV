@@ -1,0 +1,75 @@
+BasicInfo:
+  FirstName: Lluís
+  LastName: Noval Juanola
+  Photo: img/perfil.png
+  Contacts:
+    - Icon: fas fa-phone
+      Info: "123 456 789"
+    - Icon: fas fa-envelope
+      Info: "llnovaljuanola@gmail.com"
+
+Profile: "Estudiant d'Administració de Sistemes Informàtics en Xarxa amb passió per la tecnologia. Actualment en formació, amb coneixements en xarxes, sistemes operatius. Motivació per aprendre. Capacitat de treball en equip i resolució de problemes."
+
+Experience:
+  - Employer: CFA Maria Verdaguer
+    Place: ""
+    Positions:
+      - Title: Pràctiques
+        Date: Novembre 2023 - Març 2024
+        Details:
+          - Manteniment de programari
+          - Instal·lació de sistemes operatius
+          - Reparació de PC
+          - Instal·lació de programari
+  - Employer: Second Option Trgovina
+    Place: ""
+    Positions:
+      - Title: Erasmus
+        Date: 2 Juny 2023 - 28 Juny 2023
+        Details:
+          - Manteniment de programari
+          - Instal·lació de sistemes operatius
+
+Education:
+  - Course: Administració de Sistemes i Xarxes
+    Place: Institut iTIC
+    Date: 2024 - Actual
+    Details: |
+      - Administrar sistemes operatius en servidors i serveis de xarxes
+      - Implementar i gestionar base de dades
+      - Dissenyar xarxes i integrar equips
+  - Course: Sistemes Microinformàtics i Xarxes
+    Place: Institut Cendrassos
+    Date: Setembre 2022 - Maig 2024
+    Details: |
+      - Sistemes operatius
+      - Xarxes locals
+      - Aplicacions ofimàtiques
+
+Skills:
+  - Family: "Habilitats Tècniques"
+    Items:
+      - Xarxes
+      - Sistemes operatius
+      - BBDD (Bases de dades)
+      - IT
+  - Family: "Habilitats Personals"
+    Items:
+      - Adaptació àgil
+      - Resolució d'incidències
+
+Languages:
+  - Name: Català
+    Level: Natiu
+  - Name: Castellà
+    Level: Natiu
+  - Name: Anglès
+    Level: Nivell Professional
+  - Name: Francès
+    Level: Nivell Professional
+
+Diplomas:
+  - B2 de Cambridge
+  - DELF B2
+
+Interests: []

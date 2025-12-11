@@ -1,0 +1,53 @@
+name: "Lluís Noval"
+position: "Enginyer de Software Sènior"
+location: "Barcelona, Catalunya"
+phone: "+34 612 345 678"
+email: "jordi.puig@example.cat"
+linkedin: "linkedin.com/in/jordi-puig-soler"
+github: "github.com/jordipuigdev"
+
+about: |
+  Enginyer de software apassionat amb més de 5 anys d'experiència en el desenvolupament d'aplicacions web escalables. M'especialitzo en arquitectura backend i optimització de rendiment. M'encanta resoldre problemes complexos i treballar en equip per crear solucions innovadores.
+
+experience:
+  - title: "Enginyer de Software Sènior"
+    company: "TechCat Solutions"
+    location: "Barcelona"
+    dates: "2022 – actualitat"
+    description: |
+      - Lideratge tècnic d'un equip de 5 desenvolupadors.
+      - Migració de monòlit a microserveis utilitzant Go i Kubernetes.
+      - Millora del rendiment de l'API en un 40%.
+  
+  - title: "Desenvolupador Full Stack"
+    company: "WebInnovadors S.L."
+    location: "Girona"
+    dates: "2019 – 2022"
+    description: |
+      - Desenvolupament d'aplicacions web amb React i Node.js.
+      - Implementació de pipelines CI/CD amb GitHub Actions.
+      - Col·laboració estreta amb l'equip de disseny per millorar la UX.
+
+education:
+  - degree: "Grau en Enginyeria Informàtica"
+    institution: "Universitat Politècnica de Catalunya (UPC)"
+    location: "Barcelona"
+    dates: "2015 – 2019"
+
+skills:
+  - category: "Llenguatges"
+    items: ["Go", "Python", "JavaScript", "TypeScript"]
+  - category: "Backend"
+    items: ["Node.js", "Django", "PostgreSQL", "Redis"]
+  - category: "DevOps"
+    items: ["Docker", "Kubernetes", "Terraform", "AWS"]
+  - category: "Eines"
+    items: ["Git", "Jira", "Grafana", "Prometheus"]
+
+languages:
+  - name: "Català"
+    level: "Nadiu"
+  - name: "Castellà"
+    level: "Nadiu"
+  - name: "Anglès"
+    level: "C1"

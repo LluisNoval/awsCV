@@ -1,0 +1,18 @@
+# Standard Hugo .gitignore
+
+# Exclude the rendered output directory (Amplify will build this)
+public/
+
+# Exclude generated assets
+resources/
+
+# Exclude Hugo build lock file
+.hugo_build.lock
+
+# Exclude OS generated files
+.DS_Store
+Thumbs.db
+
+# Exclude editor directories
+.vscode/
+.idea/
