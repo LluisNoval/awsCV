@@ -2,32 +2,56 @@
 {{ .Scratch.Set "data" $data }}
 <!DOCTYPE html>
 <html lang="en">
-    {{ partial "head.html" . }}
+{{ partial "head.html" . }}
+
 <body>
     <div class="content">
         {{ if .Site.Params.swapColumns }}
         <div class="content__left content__swapped__left">
-        {{ else }}
-        <div class="content__left">
-        {{ end }}
-            <h1 class="mainHeading">{{ $data.BasicInfo.FirstName }} <span>{{ $data.BasicInfo.LastName }}</span></h1>
-            {{ partial "_profile.html" $data }}
-            {{ partial "_experience.html" $data }}
-            {{ partial "_education.html" $data }}
-            {{ partial "_references.html" $data }}
-        </div>
-        {{ if .Site.Params.swapColumns }}
-        <div class="content__right content__swapped__right">
-        {{ else }}
-        <div class="content__right">
-        {{ end }}
-            {{ partial "_avatar.html" $data }}
-            {{ partial "_contacts.html" $data }}
-            {{ partial "_skills.html" $data }}
-            {{ partial "_languages.html" $data }}
-            {{ partial "_diplomas.html" $data }}
-            {{ partial "_interests.html" $data }}
-        </div>
-    </div>
+            {{ else }}
+            <div class="content__left">
+                {{ end }}
+                <h1 class="mainHeading">{{ $data.BasicInfo.FirstName }} <span>{{ $data.BasicInfo.LastName }}</span></h1>
+                {{ partial "_profile.html" $data }}
+                {{ partial "_experience.html" $data }}
+                {{ partial "_education.html" $data }}
+                {{ partial "_references.html" $data }}
+            </div>
+            {{ if .Site.Params.swapColumns }}
+            <div class="content__right content__swapped__right">
+                {{ else }}
+                <div class="content__right">
+                    {{ end }}
+                    {{ partial "_avatar.html" $data }}
+                    {{ partial "_contacts.html" $data }}
+                    {{ partial "_skills.html" $data }}
+                    {{ partial "_languages.html" $data }}
+                    {{ partial "_diplomas.html" $data }}
+                    {{ partial "_interests.html" $data }}
+                </div>
+            </div>
+            <!-- COMPTADOR DE VISITES -->
+            <!-- Aquest div mostra el text on apareixerà el número -->
+            <div id="visitor-counter"
+                style="text-align: center; padding: 20px; color: #aaa; font-size: 0.9rem; font-family: sans-serif;">
+                Visites: <span id="counter-value">Carregant...</span>
+            </div>
+
+            <!-- Script JavaScript per connectar amb AWS -->
+            <script>
+                // 1. Fem una crida (fetch) a la nostra funció Lambda (el backend)
+                fetch('https://ijua7jtlnnb7mlnxa3rt2l2vgm0gomsm.lambda-url.us-east-1.on.aws/')
+                    .then(response => response.json()) // 2. Convertim la resposta a format JSON (dades llegibles)
+                    .then(data => {
+                        // 3. Comprovem si la resposta té el camp "visites"
+                        if (data.visites) {
+                            // 4. Busquem l'element HTML amb id "counter-value" i li posem el número
+                            document.getElementById('counter-value').innerText = data.visites;
+                        }
+                    })
+                    // 5. Si alguna cosa falla (p.ex. no hi ha internet/backend caigut), mostrem l'error a la consola (F12)
+                    .catch(err => console.error('Error carregant el comptador:', err));
+            </script>
 </body>
+
 </html>
