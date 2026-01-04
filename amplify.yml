@@ -54,6 +54,9 @@ frontend:
         # Configure Git
         - echo "Configuring Git..."
         - git config core.quotepath false
+
+        # Reemplaçem el placeholder per la variable d'entorn
+        - sed -i "s|API_URL_PLACEHOLDER|$${API_URL}|g" layouts/index.html
     build:
       commands:
         - echo "Building site..."
