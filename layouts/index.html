@@ -30,12 +30,34 @@
                     {{ partial "_interests.html" $data }}
                 </div>
             </div>
-            <!-- COMPTADOR DE VISITES -->
-            <!-- Aquest div mostra el text on apareixerà el número -->
-            <div id="visitor-counter"
-                style="text-align: center; padding: 20px; color: #aaa; font-size: 0.9rem; font-family: sans-serif;">
-                Visites: <span id="counter-value">Carregant...</span>
-            </div>
+            <!-- COMPTADOR DE VISITES PREMIUM -->
+            <footer
+                style="margin-top: 60px; padding: 40px 0; border-top: 1px solid rgba(0,0,0,0.06); display: flex; justify-content: center; width: 100%;">
+                <div id="visitor-counter" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; 
+                            background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); 
+                            border: 1px solid rgba(0,0,0,0.05); border-radius: 50px; 
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            cursor: pointer; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"
+                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.03)'">
+
+                    <div
+                        style="background: #f0f0f0; padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; line-height: 1.1;">
+                        <span
+                            style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; font-weight: 700;">Visites
+                            totals</span>
+                        <span id="counter-value" style="font-size: 1.2rem; color: #111; font-weight: 800;">...</span>
+                    </div>
+                </div>
+            </footer>
 
             <!-- Script JavaScript per connectar amb AWS -->
             <script>
@@ -46,10 +68,10 @@
                         // 3. Comprovem si la resposta té el camp "visites"
                         if (data.visites) {
                             // 4. Busquem l'element HTML amb id "counter-value" i li posem el número
-                            document.getElementById('counter-value').innerText = data.visites;
+                            document.getElementById('counter-value').innerText = data.visites.toLocaleString();
                         }
                     })
-                    // 5. Si alguna cosa falla (p.ex. no hi ha internet/backend caigut), mostrem l'error a la consola (F12)
+                    // 5. Si alguna cosa falla, mostrem l'error a la consola
                     .catch(err => console.error('Error carregant el comptador:', err));
             </script>
 </body>
