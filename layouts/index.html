@@ -39,8 +39,8 @@
 
             <!-- Script JavaScript per connectar amb AWS -->
             <script>
-                // 1. Fem una crida (fetch) a la nostra funció Lambda (el backend)
-                fetch('https://ijua7jtlnnb7mlnxa3rt2l2vgm0gomsm.lambda-url.us-east-1.on.aws/')
+                // 1. Fem una crida (fetch) a la teva funció Lambda (el backend)
+                fetch('API_URL_PLACEHOLDER')
                     .then(response => response.json()) // 2. Convertim la resposta a format JSON (dades llegibles)
                     .then(data => {
                         // 3. Comprovem si la resposta té el camp "visites"
